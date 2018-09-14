@@ -57,7 +57,8 @@ class AutoCsrf {
         return $token == $_SESSION['autocsrf_token'];
     }
     
-    public static function getCode () {
+    //get token
+    public static function getToken () {
         return $_SESSION['autocsrf_token'];
     }
     
@@ -78,3 +79,4 @@ class AutoCsrf {
 AutoCsrf::run();
 AutoCsrf::autoCheck(); //auto checks and dies if mismatch
 //AutoCsrf::check("121312"); //manual check!
+// <input name="autocsrf_token" value="<?php echo AutoCsrf::getToken(); ?>" />
